@@ -1,6 +1,9 @@
+ifdef ASAN
+LIBS += -lasan
+endif
 
 all:
-	$(CC) -g hsi2s_qmi_test.c -lhsi2sqmi -o hsi2s_qmi_test
+	$(CC) -g hsi2s_qmi_test.c -lhsi2sqmi -o hsi2s_qmi_test $(LIBS)
 
 clean:
 	rm -f hsi2s_qmi_test
